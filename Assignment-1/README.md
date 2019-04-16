@@ -13,7 +13,7 @@
 3) The program will run and will output "insert.txt" in the same folder.
 
 ## Running Time
-![Insertion Sort](/img/insertionSort.png)
+![Insertion Sort](https://github.com/Kourchenko/CS325-S2019/blob/master/Assignment-1/img/insertionSort.png)
 
 n - size of array | Time in seconds
 ------------ | -------------
