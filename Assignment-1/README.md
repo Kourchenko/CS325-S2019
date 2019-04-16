@@ -14,6 +14,7 @@
 
 ## Running Time
 ![Insertion Sort](/img/insertionSort.png)
+
 n - size of array | Time in seconds
 ------------ | -------------
 1000 | 0.1
