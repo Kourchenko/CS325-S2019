@@ -12,7 +12,7 @@
 2) Type "python insertsort.py data.txt" (assuming your data is in a file named "data.txt")
 3) The program will run and will output "insert.txt" in the same folder.
 
-## Running Time
+#### Running Time
 ![Insertion Sort](https://github.com/Kourchenko/CS325-S2019/blob/master/Assignment-1/img/insertionSort.png)
 
 n - size of array | Time in seconds
