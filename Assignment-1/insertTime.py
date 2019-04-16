@@ -1,5 +1,6 @@
-import random
-import timeit
+import random, timeit
+
+MAX_VALUE = 10000 # Max value for size of array to sort
 
 def insertSort(array):
     # Begin insertion 1 ahead of first position, we're comparing 0 and i
@@ -14,20 +15,21 @@ def insertSort(array):
 
      array[position]=currentvalue
 
-# Max value for size of array to sort
-MAX_VALUE = 10000
 # Randomly-generated size of Array
-n = 10000
+n = 50000
 
-for i in range(0, 3):
+print("Generating unsorted arrays...")
+print("========")
+for z in range(1, 4):
     array = []
     for i in range(1, n):
-        # Generate random value
-        randomValue = random.randint(1, MAX_VALUE)
         # Append random value to array
-        array.append(randomValue)
+        array.append(random.randint(1, MAX_VALUE))
 
-    def timeInsertSort():
+    print("%d) Insertion Sort - Sorting..." % z)
+    def timeMergeSort():
         insertSort(array)
+    # Print n size of array, time to sort (ms)
+    print("Sorted [%d] in <%f> seconds \n" % (n, timeit.timeit(timeMergeSort, number=100)))
 
-    print("%d %f" % (n, timeit.timeit(timeInsertSort, number=100)))
+print("========")

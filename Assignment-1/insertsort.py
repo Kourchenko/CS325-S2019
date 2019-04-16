@@ -22,19 +22,21 @@ line = file.readline()
 outputFile = open("insert.txt", "a")
 # While file.readline() has a line
 while line:
+    # Split file.readline() by spaces
+    currentLine = line.split()
+
     # Count of numbers to sort
-    count = int(line[0])
+    count = int(currentLine[0])
 
     # Get values from line and convert into an array
-    values = line[1:].split()
+    values = currentLine[1:]
 
     # Convert values into integers
     intValues = []
     for i in values:
         if i != '' or i != '\n':
             intValues.append(int(i))
-
-    # Do Merge-sort
+    # Do sort
     insertSort(intValues)
 
     # Write each sorted integer to the output file

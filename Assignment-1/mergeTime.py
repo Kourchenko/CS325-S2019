@@ -1,5 +1,7 @@
 import random
 import timeit
+# Max value for size of array to sort
+MAX_VALUE = 10000
 
 # Implement MergeSort
 def mergeSort(array):
@@ -36,22 +38,22 @@ def mergeSort(array):
             j = j + 1
             k = k + 1
 
-# Max value for size of array to sort
-MAX_VALUE = 10000
+
 # Randomly-generated size of Array
-n = 20000
+n = 10000
 
-
-for z in range(0, 3):
+print("Generating unsorted arrays...")
+print("========")
+for z in range(1, 4):
     array = []
     for i in range(1, n):
-        # Generate random value
-        randomValue = random.randint(1, MAX_VALUE)
         # Append random value to array
-        array.append(randomValue)
+        array.append(random.randint(1, MAX_VALUE))
 
+    print("%d) Merge Sort - Sorting..." % z)
     def timeMergeSort():
         mergeSort(array)
+    # Print n size of array, time to sort (ms)
+    print("Sorted [%d] in <%f> seconds \n" % (n, timeit.timeit(timeMergeSort, number=100)))
 
-    print("%d %f" % (n, timeit.timeit(timeMergeSort, number=100)))
-
+print("========")
