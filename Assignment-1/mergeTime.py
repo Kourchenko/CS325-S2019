@@ -40,7 +40,7 @@ def mergeSort(array):
 
 
 # Randomly-generated size of Array
-n = 10000
+n = 1000
 
 print("Generating unsorted arrays...")
 print("========")
