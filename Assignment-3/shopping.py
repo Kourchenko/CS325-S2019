@@ -118,4 +118,8 @@ def shoppingSpree(maxWeight, itemWeights, itemPrices, n):
     return sol[n][maxWeight], valuesUsed
 
 
-readFileDoShopping(sys.argv[1])
+itemWeights = [2, 3, 4, 5]
+itemPrices = [10, 2, 5, 6]
+
+r = shoppingSpree(8, itemWeights, itemPrices, 4)
+print(r)
