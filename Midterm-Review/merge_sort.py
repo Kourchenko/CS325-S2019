@@ -1,7 +1,5 @@
 import random
 import timeit
-# Max value for size of array to sort
-MAX_VALUE = 10000
 
 # Implement MergeSort
 def mergeSort(array):
