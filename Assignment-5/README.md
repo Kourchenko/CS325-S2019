@@ -1,5 +1,5 @@
 # Diego Kourchenko, kourched
-## CS325 - Assignment 4
+## CS325 - Assignment 5
 
 ### Running mergesort.py
 1) Open "CS325-S2019/Assignment-4" folder in your command prompt
