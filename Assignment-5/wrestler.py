@@ -8,11 +8,11 @@ def readFile():
     line = file.readline()
 
     nWrestlers = int(line.split()[0])
-    wresters = []
+    wrestlers = []
     for i in range(0, nWrestlers):
         line = file.readline()
         wrestler = str(line.split()[0])
-        wrester.append(wrestler)
+        wrestlers.append(wrestler)
 
     line = file.readline()
     nRivalries = int(line.split()[0])
@@ -21,30 +21,39 @@ def readFile():
         wrestler1 = str(line.split()[0])
         wrestler2 = str(line.split()[1])
 
-        if wrestler1 not in babyfaces or wrestler1 not in heels:
-            if wresteler2 not in babyfaces or wrestler2 not in heels:
-                babyfaces.append(wrester1)
-                heels.append(wrester2)
-            elif wrester2 in babyfaces:
-                heels.append(wrester1)
-            elif wrester2 in heels:
-                babyfaces.append(wrester1)
-        elif wrester1 in babyfaces:
-            if wrester2 in babyfaces:
-                print("No, cannot make rivalries, both wrestlers are in the same group...")
-                exit()
-        elif wrester1 in heels:
-            if wrester2 in heels:
-                print("No, cannot make rivalries, both wrestlers are in the same group...")
-                exit()
+        if wrestler1 in heels and wrestler2 in heels:
+            print("No")
+            print("{} cannot fight {} because they are both Babyfacess...".format(wrestler1, wrestler2))
+            exit()
+        elif wrestler1 in babyfaces and wrestler2 in babyfaces:
+            print("No")
+            print("{} cannot fight {} because they are both Babyfacess...".format(wrestler1, wrestler2))
+            exit()
+        else:
+            if wrestler1 in babyfaces and wrestler2 in heels:
+                continue
+            elif wrestler1 in heels and wrestler2 in babyfaces:
+                continue
+            elif wrestler1 in babyfaces and wrestler2 not in heels:
+                heels.append(wrestler2)
+            elif wrestler1 in heels and wrestler2 not in babyfaces:
+                babyfaces.append(wrestler2)
+            elif wrestler1 not in babyfaces and wrestler2 not in babyfaces:
+                babyfaces.append(wrestler1)
+                if wrestler2 not in heels:
+                    heels.append(wrestler2)
+            elif wrestler1 not in heels and wrestler2 not in heels:
+                heels.append(wrestler1)
+                if wrestler2 not in babyfaces:
+                    babyfaces.append(wrestler2)
     print("Yes\n")
     print("Babyfaces: ")
     for bf in babyfaces:
-        print(bf + " ")
+        print(bf, end=' ')
     print()
     print("Heels: ")
     for h in heels:
-        print(h + " ")
+        print(h, end=' ')
     print()
 
 
