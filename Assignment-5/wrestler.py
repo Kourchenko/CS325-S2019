@@ -1,4 +1,48 @@
 import sys
+from queue import Queue
+
+my_graph = {
+    'A': {'B', 'C'},
+    'B': {'A', 'D', 'E'},
+    'C': {'A', 'F'},
+    'D': {'B'},
+    'E': {'B', 'F'},
+    'F': {'C', 'E'}
+}
+
+def bfs(graph, start):
+    visited, stack = set(), [start]
+    while stack:
+        vertex = stack.pop()
+        if vertex not in visited:
+            print(vertex)
+            print(stack)
+            visited.add(vertex)
+            stack.extend(graph[vertex] - visited)
+    return visited
+
+
+def my_bfs(graph, start):
+    visited = []
+    que = Queue()
+    visited.append(start)
+    que.put(start)
+    print("Root: {}\n".format(start))
+    while not que.empty():
+        vertex = que.get_nowait()
+        print("Parent: {}".format(vertex))
+        print("Unvisited Children: ", end='')
+        for n in graph[vertex]:     # visit neighbors
+            if n not in visited:
+                print(n, end=' ')       # display source
+                que.put(n)          # enqueue neighbor
+                visited.append(n)   # visited neighbor
+        print()
+        print()
+
+
+my_bfs(my_graph, 'A')
+
 
 def readFile():
     babyfaces = []
@@ -57,4 +101,3 @@ def readFile():
     print()
 
 
-readFile()
