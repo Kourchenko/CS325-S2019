@@ -121,4 +121,4 @@ def run_random_test():
         LIST_SIZE = LIST_SIZE + 1000
 
 
-run_random_test()
+read_file("bin.txt")
